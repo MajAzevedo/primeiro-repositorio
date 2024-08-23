@@ -1,24 +1,72 @@
-body{
-    background: #ccc;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
    
    
 }
-#title, .subtitle, .post_title {
-    color: blue;
+
+.wrapper {
+    background-color: rgb(255, 174, 0);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.post_title{
-    font-size: 16px;
-    font-style: italic;
+.checkbox {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
 }
 
-.post{
-    background: #fff;
-    padding: 15px 10px 5px 0;
-    border: 3px solid #000;
-    margin: 10px;
-    border-style: dotted;
-    border-radius: 5%;
-    text-align: justify;
-  
+.checkbox .trace {
+    width: 90px;
+    height: 8px;
+    background-color: white;
+    position: absolute;
+    border-radius: 4px;
+    transition: 0.5s ease-in-out;
+}
+
+.checkbox .trace:nth-child(1) {
+    top: 26px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(2) {
+    top: 46px;
+    transform: rotate(0);
+}
+
+.checkbox .trace:nth-child(3) {
+    top: 66px;
+    transform: rotate(0);
+}
+
+#toggle {
+    display: none;
+
+}
+
+#toggle:checked + .checkbox .trace:nth-child(1){
+    transform: rotate(45deg);
+    top: 47px;
+}
+
+#toggle:checked + .checkbox .trace:nth-child(2){
+    transform: translateX(-100px);
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+#toggle:checked + .checkbox .trace:nth-child(3){
+    transform: rotate(-45deg);
+    top: 48px;
 }
